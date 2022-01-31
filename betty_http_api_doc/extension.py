@@ -13,7 +13,7 @@ from betty.extension import Extension
 from betty.gui import GuiBuilder
 
 
-class ReDoc(Extension, Generator, GuiBuilder):
+class HttpApiDoc(Extension, Generator, GuiBuilder):
     async def generate(self) -> None:
         await self._render()
 
@@ -34,7 +34,7 @@ class ReDoc(Extension, Generator, GuiBuilder):
 
     @classmethod
     def gui_name(cls) -> str:
-        return 'ReDoc'
+        return 'HTTP API Documentation'
 
     @classmethod
     def gui_description(cls) -> str:
@@ -50,4 +50,4 @@ def _do_render(build_directory_path: Path, www_directory_path: Path) -> None:
 
     shutil.copy2(build_directory_path / 'node_modules' / 'redoc' / 'bundles' / 'redoc.standalone.js', www_directory_path / 'redoc.js')
 
-    logging.getLogger().info('Built the ReDoc API documentation.')
+    logging.getLogger().info('Built the HTTP API documentation.')

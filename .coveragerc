@@ -1,9 +1,7 @@
 [run]
-source = betty
+source = betty_http_api_doc
 omit =
-    betty/_package/*
-    betty/tests/*
-    betty/pytests/*
+    betty_http_api_doc/tests/*
 
 [report]
 exclude_lines =
